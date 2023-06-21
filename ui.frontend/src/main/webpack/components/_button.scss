@@ -1,0 +1,23 @@
+.cmp-button {
+    
+    background-color: $button-bgcolor;
+    color:  $color-text;
+    // border:  2px solid $button-bgcolor;
+    border:  2px solid $button-bgcolor;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: $font-teladoc-replication;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+
+    &__teladoc-replication > .cmp-button {
+        background-color: transparent;
+        border: 2px solid transparent;
+        color: $button-bgcolor;
+    }
+
+}
+.cmp-button__text {}
+.cmp-button__icon {}
+//.cmp-button__icon--myIcon {}
+

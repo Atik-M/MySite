@@ -1,0 +1,26 @@
+.cmp-tabs {
+    margin: 0 auto;
+    max-width: 800px;
+
+    &__tablist{
+        border-bottom: 2px solid $border-color;
+        justify-content: center ;
+    }
+
+    &__tab {
+        color: $tabs-color;
+        font-family: $font-teladoc-replication;
+        transition: color .3s;
+        border-bottom: 3px solid transparent
+        
+    }
+    &__tab--active {
+        color: $button-bgcolor;
+        border-bottom: 3px solid $button-bgcolor;
+        
+    }
+
+}
+
+.cmp-tabs__tabpanel {}
+.cmp-tabs__tabpanel--active {}

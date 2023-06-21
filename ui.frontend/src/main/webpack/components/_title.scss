@@ -1,0 +1,18 @@
+.cmp-title {
+
+    &__header{
+        text-align: center;
+        background-color: $black;
+        color: $whitesmoke;
+    }
+     
+    &__teladoc-replication{
+        color: $tabs-color;
+        font-family: $font-teladoc-replication2;
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+
+}
+.cmp-title__text {}
+.cmp-title__link {}

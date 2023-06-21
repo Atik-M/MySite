@@ -1,0 +1,34 @@
+
+<div data-sly-use.card="com.adobe.cq.wcm.core.components.models.Teaser"
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-use.imageTemplate="image.html"
+  data-sly-use.pretitleTemplate="pretitle.html"
+  data-sly-use.titleTemplate="title.html"
+  data-sly-use.descriptionTemplate="description.html"
+  data-sly-use.actionsTemplate="actions.html"
+  data-sly-test.hasContent="${card.imageResource || card.pretitle || card.title || card.description || card.actions.size > 0}"
+  id="${card.id}"
+  class="cmp-teaser${!wcmmode.disabled && card.imageResource ? ' cq-dd-image' : ''}"
+  data-cmp-data-layer="${card.data.json}">
+ <a class="cmp-teaser__link"
+    data-sly-attribute="${card.link.htmlAttributes}"
+    data-sly-unwrap="${!card.link.valid || !card.actions.empty}"
+    data-cmp-clickable="${card.data ? true : false}">
+    
+    <div style="display: flex;">
+    <div class="cmp-card__image">
+        <sly data-sly-call="${imageTemplate.image @ teaser=card}"></sly>
+    </div>
+     <div class="cmp-teaser__content" style="display: block;">
+         <sly data-sly-call="${pretitleTemplate.pretitle @ teaser=card}"></sly>
+         <sly data-sly-call="${titleTemplate.title @ teaser=card}"></sly>
+         <sly data-sly-call="${descriptionTemplate.description @ teaser=card}"></sly>
+         <sly data-sly-call="${actionsTemplate.actions @ teaser=card}"></sly>
+         <!-- <h2 class="">${properties.shortdescription}</h2> -->
+         <!-- <h2> ${card.shortdescription}</h2> -->
+     </div>
+    </div>
+     
+ </a>
+</div>
+

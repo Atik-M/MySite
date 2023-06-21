@@ -1,0 +1,24 @@
+
+//== Font
+
+$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size:             16px;
+$font-height:           1.5;
+
+//== Color
+
+// Normal mode
+$color-foreground:      #202020;
+$color-text:      #fff;
+$button-bgcolor:        #6240e8;
+$border-color:      #dbdbdb;
+$tabs-color: #351f65;
+$black: black;
+$whitesmoke: whitesmoke;
+$color-background: rgb(255, 255, 255);
+$color-link: rgb(255, 248, 248);
+
+// Dark mode
+$color-foreground-dark: invert($color-foreground);
+$color-background-dark: invert($color-background);
+$color-link-dark:       invert($color-link);

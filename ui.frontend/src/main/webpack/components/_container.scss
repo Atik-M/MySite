@@ -1,0 +1,13 @@
+.cmp-container {
+    
+}
+.cmp-container__center .cmp-container{
+    justify-content: center;
+}
+.cmp-container__flex .cmp-container{
+    display: flex;
+    column-gap: 48px;
+}
+.cmp-container__block .cmp-container{
+    display: block;
+}
