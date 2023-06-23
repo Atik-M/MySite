@@ -13,17 +13,25 @@ const resolve = {
     extensions: ['.js', '.ts'],
     plugins: [new TSConfigPathsPlugin({
         configFile: './tsconfig.json'
-    })]
+    })],
+    modules: ['node_modules'],
+    alias: {
+        Components: path.resolve(SOURCE_ROOT, 'components'),
+        Utils: path.resolve(SOURCE_ROOT, 'utils'),
+        Services: path.resolve(SOURCE_ROOT, 'services'),
+        Vendor: path.resolve(SOURCE_ROOT, 'vendor'),
+    }
 };
 
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        'site-fonts': path.resolve(SOURCE_ROOT + '/site/main-fonts.js'),
+        'site': path.resolve(SOURCE_ROOT + '/site/main.ts')
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-[name]/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },
@@ -87,7 +95,19 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
+                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' },
+                {
+                    from: path.resolve(__dirname, SOURCE_ROOT + '/resources'),
+                    to: './clientlib-site-fonts',
+                    globOptions: {
+                        ignore: ['**/img/**']
+                    }
+                },
+                
+                {
+                    from: './node_modules/@fortawesome/fontawesome-free/webfonts',
+                    to: './clientlib-site-fonts/font-awesome'
+                }
             ]
         })
     ],

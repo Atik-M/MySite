@@ -15,17 +15,19 @@
     data-sly-unwrap="${!card.link.valid || !card.actions.empty}"
     data-cmp-clickable="${card.data ? true : false}">
     
-    <div style="display: flex;">
+    <div class="cmp-card">
     <div class="cmp-card__image">
         <sly data-sly-call="${imageTemplate.image @ teaser=card}"></sly>
     </div>
-     <div class="cmp-teaser__content" style="display: block;">
+     <div class="cmp-teaser__content">
          <sly data-sly-call="${pretitleTemplate.pretitle @ teaser=card}"></sly>
          <sly data-sly-call="${titleTemplate.title @ teaser=card}"></sly>
          <sly data-sly-call="${descriptionTemplate.description @ teaser=card}"></sly>
+         
          <sly data-sly-call="${actionsTemplate.actions @ teaser=card}"></sly>
+         
          <!-- <h2 class="">${properties.shortdescription}</h2> -->
-         <h2> ${card.shortdescription}</h2>
+         <p class="cmp-card__shortdescription"> ${card.shortdescription}</p>
      </div>
     </div>
      

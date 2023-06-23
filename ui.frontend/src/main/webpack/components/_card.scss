@@ -2,3 +2,42 @@
     max-width: 200px ;
     height: auto;
 }
+
+.cmp-teaser__action-link{
+    background-color: $button-bgcolor;
+    color:  $color-text;
+    // border:  2px solid $button-bgcolor;
+    border:  2px solid $button-bgcolor;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: $font-teladoc-replication;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    text-decoration: none
+
+}
+
+.cmp-teaser__title{
+    color: $tabs-color;
+    font-family: $font-teladoc-replication2;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+.cmp-teaser__description{
+    font-family: $font-teladoc-replication;
+    margin-top: 1rem;
+}
+
+.cmp-teaser__content{
+    margin-left: 20px;
+    display: block;
+}
+
+.cmp-card{
+    display: flex;
+}
+
+.cmp-teaser__pretitle, .cmp-card__shortdescription{
+    font-family: $font-teladoc-replication;
+    margin-top: 1rem;
+}

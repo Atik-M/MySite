@@ -1,14 +1,16 @@
 .cmp-button {
     
-    background-color: $button-bgcolor;
-    color:  $color-text;
+    // background-color: $button-bgcolor;
+    // color:  $color-text;
+    // // border:  2px solid $button-bgcolor;
     // border:  2px solid $button-bgcolor;
-    border:  2px solid $button-bgcolor;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: $font-teladoc-replication;
-    font-size: 1rem;
-    padding: 0.5rem 2rem;
+    // border-radius: 50px;
+    // cursor: pointer;
+    // font-family: $font-teladoc-replication;
+    // font-size: 1rem;
+    // padding: 0.5rem 2rem;
+    border: none;
+    background: transparent;
 
     &__teladoc-replication > .cmp-button {
         background-color: transparent;

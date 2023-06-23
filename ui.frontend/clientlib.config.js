@@ -88,6 +88,28 @@ module.exports = {
           ignore: ['**/*.js', '**/*.css']
         }
       }
-    }
+    },{
+      ...libsBaseConfig,
+      name: 'clientlib-site-fonts',
+      categories: ['mysite.site-fonts'],
+      dependencies: [],
+      assets: {
+        // Copy entrypoint scripts and stylesheets into the respective ClientLib
+        // directories
+        css: {
+          cwd: 'clientlib-site-fonts',
+          files: ['**/*.css'],
+          flatten: false,
+        },
+
+        // Copy all other files into the `resources` ClientLib directory
+        resources: {
+          cwd: 'clientlib-site-fonts',
+          files: ['**/*.*'],
+          flatten: false,
+          ignore: ['**/*.css'],
+        },
+      },
+    },
   ]
 };
