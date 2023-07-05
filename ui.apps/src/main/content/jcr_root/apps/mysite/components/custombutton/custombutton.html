@@ -25,9 +25,12 @@
   data-cmp-clickable="${button.data ? true : false}"
   data-cmp-data-layer="${button.data.json}">
 
-
+  <sly data-sly-test="${'icon-position--before' in componentContext.cssClassNames}"
+    data-sly-call="${iconTemplate.iconClasses @ componentclassNames = componentContext.cssClassNames}"></sly>
 
 <span data-sly-test="${button.text}" class="cmp-button__text">${button.text}</span>
 
-
+  <sly data-sly-test="${'icon-position--after' in componentContext.cssClassNames || !('icon-position--before' in componentContext.cssClassNames)}"
+         data-sly-call="${iconTemplate.iconClasses @ componentclassNames = componentContext.cssClassNames}"></sly>
+         
 </button>
